@@ -1,12 +1,16 @@
-package congestion.calculator;
+package volvo.com.tax.calculator.usecase;
 
+import org.springframework.stereotype.Component;
+import volvo.com.tax.calculator.model.Vehicle;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.*;
-import java.text.*;
 
+@Component
 public class CongestionTaxCalculator {
 
     private static Map<String, Integer> tollFreeVehicles = new HashMap<>();
@@ -21,13 +25,13 @@ public class CongestionTaxCalculator {
 
     }
     
-    public int getTax(Vehicle vehicle, Date[] dates)
+    public int getTax(Vehicle vehicle, String[] dates)
     {
-        Date intervalStart = dates[0];
+        Date intervalStart = createDate(dates[0]);
         int totalFee = 0;
 
         for (int i = 0; i < dates.length ; i++) {
-            Date date = dates[i];
+            Date date = createDate(dates[i]);
             int nextFee = GetTollFee(date, vehicle);
             int tempFee = GetTollFee(intervalStart, vehicle);
 
@@ -48,6 +52,16 @@ public class CongestionTaxCalculator {
       
         if (totalFee > 60) totalFee = 60;
         return totalFee;
+    }
+
+    private Date createDate(String date){
+        Date dateTime = null;
+        try {
+            dateTime = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").parse(date);
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
+        return dateTime;
     }
 
     private boolean IsTollFreeVehicle(Vehicle vehicle) {
