@@ -4,7 +4,7 @@
 
 ### The job done 
 
-In the 4 horas to do this assignment, the following tasks was prioritized and complited :
+In the 4 horas to do this assignment, the following tasks was prioritized and completed :
 
 Included Spring Boot
 
