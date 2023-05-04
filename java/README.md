@@ -10,7 +10,7 @@ Included Spring Boot
 
 Included Maven at the app
 
-Writed the Unit Test check if the implemented rules was correct based the description
+Writed the Unit Test to check if the implemented rules was correct
     
 - test with Saturday & Sunday
 - test with all public holidays
@@ -40,9 +40,9 @@ Fix the bug's code
 
 Refactory the app to use LocalDateTime (Java 8+) rather than the old fashion Date classe
 - This will cause a significant change at the  CongestionTaxCalculator classe, 
-      since i will use the LocalDate apis to deal with year, months and days
+      since i will use the LocalDate apis to deal with years, months and days
 
-Changes the code to accept any city and year
+Change the app to accept any city and year
 
 Save the data in a data store
 
