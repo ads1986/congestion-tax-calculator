@@ -1,0 +1,48 @@
+Congestion Tax Calculator
+
+02/05 - 09:46 - 10:02 - 16min
+		10:05 - 10:30 - 25min
+		10:55 - 11:51 - 56min
+		12:52 - 13:26 - 34min
+
+		2h 10m
+
+03/05
+
+		13:30 - 13:51
+		13:55 - 14:23
+
+		44m
+
+04/05
+
+		13:00 - 13:51
+
+		51m
+
+Total 3h 45m
+
+To-Do List
+
+Rules
+
+
+App
+
+✓ Include Spring Boot at the app
+✓ Include Maven at the app
+
+Write unit test applyin the espected rules 
+	✓ test with Saturday & Sunday 
+	✓ test with all public holidays
+	✓ test with days before public holiday
+	✓ test with July
+	✓ test with a valid day but invalid time 
+	✓test with a valid day and time
+	✓test with a vehicule that passes several stations in 60 minutes, 
+	✓and if is taxed once. Validate if the amount paid is the highest one
+	✓test if is a valid exempt vehile an if is not taxed
+	✓test if the vehicule is taxed the maximum of 60 per day
+
+Create an Endpoint to receive the inputs
+Write unite test for the endpoint
